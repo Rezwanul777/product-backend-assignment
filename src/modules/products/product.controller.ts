@@ -143,25 +143,6 @@ const createProduct = async (req: Request, res: Response) => {
 
   }
 
-  // order controller
-
-  const createOrder = async (req: Request, res: Response) => {
-    try {
-      const orderData: TOrder = req.body;
-      const result = await ProductServices.createOrder(orderData);
-      res.status(201).json({
-        success: true,
-        message: 'Order created successfully',
-        data: result,
-      });
-    } catch (err: any) {
-      res.status(500).json({
-        success: false,
-        message: err.message || 'Something went wrong',
-        error: err,
-      });
-    }
-}
   
 
 
@@ -172,5 +153,5 @@ const createProduct = async (req: Request, res: Response) => {
     getSingleProduct,
     productUpdate,
     productDelete,
-    createOrder
+   
   }

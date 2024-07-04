@@ -1,4 +1,5 @@
-import { TOrder, TProduct } from "./product.interface";
+
+import {  TProduct } from "./product.interface";
 import { Product } from "./product.model";
 
 // create product DB
@@ -45,14 +46,7 @@ const getSingleProductIntoDB = async (id: string) => {
     return result;
   };
 
-  // order Management-create order
-
-  const createOrder = async (orderData: TOrder) => {
-    const result = await Product.create(orderData);
-    return result;
-  };
-
-
+  
 
 
 export const ProductServices = {
@@ -61,5 +55,5 @@ export const ProductServices = {
   getSingleProductIntoDB,
   updateProductIntoDB,
   deleteProductIntoDB,
-  createOrder
+  
 };

@@ -1,5 +1,7 @@
 import express from 'express'
 import { ProductControllers } from './product.controller';
+import { OrderControllers } from './orders/order.controllers';
+
 
 const router = express.Router()
 
@@ -12,6 +14,6 @@ router.put('/:productId',ProductControllers.productUpdate)
 router.delete('/:productId',ProductControllers.productDelete)
 
 // order route
-router.post('/',ProductControllers.createOrder)
+router.post('/orders',OrderControllers.createOrder)
 
 export const ProductRoutes=router;
