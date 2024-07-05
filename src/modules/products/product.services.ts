@@ -28,8 +28,8 @@ const searchableField = searchFields.map(field => ({
 // get single product from db
 const getSingleProductIntoDB = async (id: string) => {
    
-        // const result = await Product.findOne({productId: id });
-        const result = await Product.aggregate([{ $match: {productId: id } }]); // using aggregate
+         const result = await Product.findOne({productId: id });
+        // const result = await Product.aggregate([{ $match: {productId: id } }]); // using aggregate
         return result;
       
       };

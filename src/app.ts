@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
-import express, { Application, Request, Response } from 'express';
+import express, { Application, Response, Request} from 'express';
 import cors from 'cors';
 import { ProductRoutes } from './modules/products/product.route';
 import { OrderRoutes } from './modules/products/orders/order.route';
@@ -19,6 +20,13 @@ app.use('/api/orders', OrderRoutes);
 
 app.get('/', (req:Request, res:Response) => {
   res.send('Hello World!')
+})
+
+app.use((req:Request, res:Response)=>{
+  return res.status(404).json({
+    success: false,
+    message: 'Route not found'
+  })
 })
 
 export default app;

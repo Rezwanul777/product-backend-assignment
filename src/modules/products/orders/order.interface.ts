@@ -1,9 +1,9 @@
-import { Schema } from "mongoose";
+// import { Schema } from "mongoose";
 
 
 export type TOrder = {
     email: string;
-    productId: Schema.Types.ObjectId;
+    productId: string;
     price: number;
     quantity: number;
   }
